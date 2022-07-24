@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.dotson.patchblocks</string>
+	<key>connections</key>
+	<dict>
+		<key>C5EE2659-44CD-4BB8-83D6-D88000A7C220</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DB836DF9-2C9A-41C2-A4ED-3E48F21E3B9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E1B485BF-EB3D-4980-A180-93A80FEB1500</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4B205D38-237A-44DA-B40D-4BDAD5C2E905</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>C. Dotson</string>
+	<key>description</key>
+	<string>Various Automations for Patchblocks</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Patchblocks Workflows</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>pa restart</string>
+				<key>subtext</key>
+				<string>Quit/Restart Patchblocks</string>
+				<key>text</key>
+				<string>Restart / Recompile Patchblocks</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C5EE2659-44CD-4BB8-83D6-D88000A7C220</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>if application "Patchblocks" is running then	tell application "Patchblocks" to quit	delay 1end iftell application "Patchblocks" to activatetell application "System Events" to tell process "Patchblocks"	click button 2 of window 1	click menu item "Help" of menu 1 of menu bar item "View" of menu bar 1	click menu item "Console" of menu 1 of menu bar item "View" of menu bar 1end tell</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DB836DF9-2C9A-41C2-A4ED-3E48F21E3B9E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>pa blocks</string>
+				<key>subtext</key>
+				<string>Open Finder window to Custom blocks folder</string>
+				<key>text</key>
+				<string>Go to Custom Blocks</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E1B485BF-EB3D-4980-A180-93A80FEB1500</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>tell application "Finder"	activate	make new Finder window	set target of Finder window 1 to folder "Custom" of folder "blocks" of folder "MacOS" of folder "Contents" of application file "Patchblocks.app" of folder "Applications" of startup diskend tell</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4B205D38-237A-44DA-B40D-4BDAD5C2E905</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Patchblocks Workflows
+
+*A collection of various Alfred automations for use with the Patchblocks software.*
+
+#### Current version includes:
+**Quit/Restart** 
+This will quit and restart your Patchblocks software in order to re-compile the blocks. This will also automatically open the Console and Help windows, and will maximize the Patchblocks window to your full screen.
+
+**Go to Custom blocks folder**
+This opens a Finder window to a folder called “Custom” in the default installation location of the Patchblocks software.</string>
+	<key>uidata</key>
+	<dict>
+		<key>4B205D38-237A-44DA-B40D-4BDAD5C2E905</key>
+		<dict>
+			<key>xpos</key>
+			<real>500</real>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C5EE2659-44CD-4BB8-83D6-D88000A7C220</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>DB836DF9-2C9A-41C2-A4ED-3E48F21E3B9E</key>
+		<dict>
+			<key>xpos</key>
+			<real>500</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>E1B485BF-EB3D-4980-A180-93A80FEB1500</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.3</string>
+	<key>webaddress</key>
+	<string>waitinglinetheory.com</string>
+</dict>
+</plist>
